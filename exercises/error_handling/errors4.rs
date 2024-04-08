@@ -1,32 +1,40 @@
-// errors4.rs
-//
-// Execute `rustlings hint errors4` or use the `hint` watch subcommand for a
-// hint.
+    // errors4.rs
+    //
+    // Execute `rustlings hint errors4` or use the `hint` watch subcommand for a
+    // hint.
 
-// I AM NOT DONE
 
-#[derive(PartialEq, Debug)]
-struct PositiveNonzeroInteger(u64);
+    #[derive(PartialEq, Debug)]
+    struct PositiveNonzeroInteger(u64);
 
-#[derive(PartialEq, Debug)]
-enum CreationError {
-    Negative,
-    Zero,
-}
+    #[derive(PartialEq, Debug)]
+    enum CreationError {
+        Negative,
+        Zero,
+    }
 
-impl PositiveNonzeroInteger {
-    fn new(value: i64) -> Result<PositiveNonzeroInteger, CreationError> {
-        // Hmm...? Why is this only returning an Ok value?
-        Ok(PositiveNonzeroInteger(value as u64))
+    impl PositiveNonzeroInteger {
+        fn new(value: i64) -> Result<PositiveNonzeroInteger, CreationError> {
+            // Hmm... Why is this always returning an Ok value?
+            if value > 0 {
+                // 如果 value 是正数，则返回 Ok
+                Ok(PositiveNonzeroInteger(value as u64))
+            } else if value == 0 {
+                // 如果 value 等于 0，则返回 Err(CreationError::Zero)
+                Err(CreationError::Zero)
+            } else {
+                // 如果 value 是负数，则返回 Err(CreationError::Negative)
+                Err(CreationError::Negative)
+            }
     }
 }
 
-#[test]
-fn test_creation() {
-    assert!(PositiveNonzeroInteger::new(10).is_ok());
-    assert_eq!(
-        Err(CreationError::Negative),
-        PositiveNonzeroInteger::new(-10)
-    );
-    assert_eq!(Err(CreationError::Zero), PositiveNonzeroInteger::new(0));
-}
+    #[test]
+    fn test_creation() {
+        assert!(PositiveNonzeroInteger::new(10).is_ok());
+        assert_eq!(
+            Err(CreationError::Negative),
+            PositiveNonzeroInteger::new(-10)
+        );
+        assert_eq!(Err(CreationError::Zero), PositiveNonzeroInteger::new(0));
+    }
