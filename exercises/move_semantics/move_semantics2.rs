@@ -23,3 +23,7 @@ fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
 
     vec
 }
+
+fn main() {
+    
+}
