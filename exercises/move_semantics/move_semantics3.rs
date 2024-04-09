@@ -21,3 +21,7 @@ fn fill_vec(mut vec: Vec<i32>) -> Vec<i32> {
 
     vec
 }
+
+fn main() {
+    
+}

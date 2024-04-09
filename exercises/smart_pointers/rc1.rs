@@ -102,3 +102,7 @@ fn main() {
 
     assert_eq!(Rc::strong_count(&sun), 1);
 }
+
+fn main() {
+    
+}

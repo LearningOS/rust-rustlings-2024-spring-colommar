@@ -20,3 +20,7 @@ fn main() {
     }
     assert_eq!(x, 1200);
 }
+
+fn main() {
+    
+}
