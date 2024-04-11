@@ -50,13 +50,12 @@ where
 
     // Insert a value into the BST
     fn insert(&mut self, value: T) {
-        //TODO
+        //todo
     }
 
     // Search for a value in the BST
-    fn search(&self, value: T) -> bool {
-        //TODO
-        true
+    fn search(&self, value: &T) -> bool {
+        //todo
     }
 }
 
@@ -66,7 +65,7 @@ where
 {
     // Insert a node into the tree
     fn insert(&mut self, value: T) {
-        //TODO
+        //todo
     }
 }
 

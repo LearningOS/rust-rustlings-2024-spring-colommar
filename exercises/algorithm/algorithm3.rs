@@ -15,6 +15,7 @@ fn sort<T: std::cmp::PartialOrd>(array: &mut [T]){
     }
 }
 
+
 #[cfg(test)]
 mod tests {
     use super::*;
